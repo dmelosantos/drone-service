@@ -11,7 +11,7 @@
 <div id="app">
     <div class="container">
         <h1>Drone Positions</h1>
-        <table class="table">
+        <table id="" class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
@@ -22,22 +22,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="item in items">
-                <td>{{ item.id }}</td>
-                <td>{{ item.latitude }}</td>
-                <td>{{ item.longitude }}</td>
-                <td>{{ item.speed }}</td>
-                <td>{{ item.stopped }}</td>
-            </tr>
             </tbody>
         </table>
+        {{ drones }}
         Stopped: means the drone has not moved over a period of 10 seconds
     </div>
 </div>
 
 <script src="/socket.io/socket.io.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="static/index.js"></script>
+<script src="static/dashboard.js"></script>
 
 </body>
 </html>

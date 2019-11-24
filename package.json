@@ -4,7 +4,7 @@
   "description": "Backend for controlling Drone positions through sockets",
   "scripts": {
     "start-udp-server": "nodemon src/droneUdpService.js",
-    "start-ui": "nodemon src/index.js",
+    "start-ui": "node src/index.js",
     "start": "npm run start-ui && npm run start-udp-server",
     "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,12 +20,13 @@
   },
   "homepage": "https://github.com/dmelosantos/drone-service#readme",
   "dependencies": {
+    "async-polling": "^0.2.1",
     "eslint-plugin-no-only-tests": "^2.3.1",
     "express": "^4.15.2",
     "nodemon": "^2.0.1",
     "socket.io": "^2.3.0",
-    "winston": "^3.2.1",
-    "socket.io-client": "latest"
+    "socket.io-client": "latest",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
