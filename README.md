@@ -6,6 +6,26 @@ Each drone should be associated with a unique identifier, and should report its 
 
 The dashboard should be a simple web application displaying the list of active drones as a table, by their unique identifiers, along with their current speed. You should visually highlight the drones that have not been moving for more than 10 seconds (the drone sent updates, but didn't move more that 1 meter).
 
+# Project Decisions
+
+In order for the drones to communicate constantly using sockets with UDP protocol
+
+For the UI to be populated quickly we use socket.io 
+
+With sockets we can also allow for broadcasts for near drones to be achieved
+
+For this project I followed the instructions and made it simple
+
+There is a script for simulating drone messaging sending
+
+There is an UI for the drone dashboard on the server
+
+On a real project we would have:
+
+1. Endpoints protected by JWT/Basic Auth
+2. Login for the dashboard
+3. In this case, for fast access I'd go with an In-Memory Database, Redis is suitable here
+
 # Running the project
 
 ## Without docker
