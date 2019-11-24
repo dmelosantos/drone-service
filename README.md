@@ -44,3 +44,22 @@ npm run start
 ```
 
 ## With docker
+
+Install Docker on your machine
+
+Go to project root folder and run the following command:
+
+```shell script
+docker build -t drone-service
+```
+
+Then:
+
+```shell script
+docker run -p 3000:3000 -p 33333:33333 -d drone-service
+```
+
+### Accessing the UI
+
+After the application is working access the browse: http://localhost:3000
+

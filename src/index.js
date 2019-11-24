@@ -10,11 +10,7 @@ const droneService = require('./service/drone.service');
 // Simulated in-memory cache to store drone's that registered on the server and send their information
 const inMemoryCache = {};
 
-app.use('/static', express.static(path.join(__dirname, 'public')));
-
-app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/public/index.html`);
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
   logger.info('a user connected');

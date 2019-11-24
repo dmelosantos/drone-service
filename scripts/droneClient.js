@@ -5,7 +5,7 @@ const dgram = require('dgram');
 
 // to reduce message size we use the pattern
 // drone id|latitude|longitude
-const message = Buffer.from('D5|-30.131288|-44.885727');
+const message = Buffer.from('D5|-35.131288|-44.885727');
 
 const client = dgram.createSocket('udp4');
 client.send(message, 0, message.length, PORT, HOST, (err) => {

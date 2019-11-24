@@ -39,7 +39,7 @@ const process = (oldDroneInformation, message) => {
       { latitude: drone.latitude, longitude: drone.longitude });
     // check the time delta and calculate speed from it
     const timeDelta = Date.now() - oldDroneInformation.lastUpdate;
-
+    // calculate drone speed
     drone.speed = distance / timeDelta;
 
     if (Math.floor(drone.speed) === 0) {

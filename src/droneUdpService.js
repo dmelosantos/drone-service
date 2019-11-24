@@ -5,7 +5,7 @@ const logger = require('./logger');
 const socket = io('http://localhost:3000');
 
 const PORT = 33333;
-const HOST = '127.0.0.1';
+const HOST = '0.0.0.0';
 
 const server = dgram.createSocket('udp4');
 
