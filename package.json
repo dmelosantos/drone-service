@@ -1,0 +1,35 @@
+{
+  "name": "drone-service",
+  "version": "1.0.0",
+  "description": "Backend for controlling Drone positions through sockets",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmelosantos/drone-service.git"
+  },
+  "author": "Daniel Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmelosantos/drone-service/issues"
+  },
+  "homepage": "https://github.com/dmelosantos/drone-service#readme",
+  "dependencies": {
+    "eslint-plugin-no-only-tests": "^2.3.1",
+    "express": "^4.15.2",
+    "nodemon": "^2.0.1",
+    "socket.io": "^2.3.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0"
+  }
+}
