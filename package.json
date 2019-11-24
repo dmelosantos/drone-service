@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Backend for controlling Drone positions through sockets",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start-udp-server": "nodemon src/droneUdpService.js",
+    "start-ui": "nodemon src/index.js",
+    "start": "npm run start-ui && npm run start-udp-server",
     "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
