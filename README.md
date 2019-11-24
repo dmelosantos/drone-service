@@ -8,23 +8,29 @@ The dashboard should be a simple web application displaying the list of active d
 
 # Project Decisions
 
-In order for the drones to communicate constantly using sockets with UDP protocol
+This project mixtures two protocols:
 
-For the UI to be populated quickly we use socket.io 
+## Drone Communication
+For DRONE communication with the backend we use Sockets on UDP
 
-With sockets we can also allow for broadcasts for near drones to be achieved
+This allows the communication with the backend to be simple, unreliable, but with less overhead
 
-For this project I followed the instructions and made it simple
+The data package of the drone should be really small, containing only it's ID|LATTITUDE|LONGITUDE values
 
-There is a script for simulating drone messaging sending
+The speed and if it is moving or not is calculate in realtime on the server
 
-There is an UI for the drone dashboard on the server
+## Realtime UI
 
-On a real project we would have:
+For the dashboard of the UI we use Socket.IO on TCP
 
-1. Endpoints protected by JWT/Basic Auth
-2. Login for the dashboard
-3. In this case, for fast access I'd go with an In-Memory Database, Redis is suitable here
+We receive an UDP package on the server and emit an message on Socket.IO which then transmits it to the why
+
+This allows us to have fast messaging from the UDP diagrams from the Drones to the UI
+
+The UI is built on VUE-JS on a separate project, this project has a built vue project distributed under public/ folder
+
+## Technology stack
+-NodeJS 12 + Express + SocketIO + Dgram + VueJS
 
 # Running the project
 
@@ -63,3 +69,22 @@ docker run -p 3000:3000 -p 33333:33333 -d drone-service
 
 After the application is working access the browse: http://localhost:3000
 
+### Drone Script
+
+To simulate the drone with UDP use the script below:
+
+```shell script
+node scripts/droneClient.js "D5|-35.131288|-44.885727"
+```
+
+The UDP package should be:
+[DRONE_ID]|[LATITUDE]|[LONGITUDE]
+
+### TODO
+1. Unit test
+2. Integration test
+3. E2E Test
+4. Lint
+5. CI integration
+6. Add Redis for fast In-Memory Cache
+7. Docker Compose with Redis
